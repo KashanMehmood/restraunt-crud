@@ -6,14 +6,14 @@ import RestaurantMake from "./component/RestaurantMake";
 import RestaurantSearch from "./component/RestaurantSearch";
 import RestaurantDetail from "./component/RestaurantDetail";
 import RestaurantUpdate from "./component/RestaurantUpdate";
-
 import { Navbar, Nav } from 'react-bootstrap';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faList,faHome, faPlus, faSearch, faInfoCircle, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   return (
@@ -27,12 +27,12 @@ function App() {
               <Nav className="mr-auto">
                 {/* you can also write this  */}
                 {/* <Nav.Link href="/">Home</Nav.Link> */}
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/list">List</Nav.Link>
-                <Nav.Link href="/create">Add</Nav.Link>
-                <Nav.Link href="/search">Search</Nav.Link>
-                <Nav.Link href="/detail">Detail</Nav.Link>
-                <Nav.Link href="/update">Update</Nav.Link>
+                <Nav.Link href="/"><FontAwesomeIcon  icon={faHome} /> Home</Nav.Link>
+                <Nav.Link href="/list"><FontAwesomeIcon icon={faList} /> List</Nav.Link>
+                <Nav.Link href="/create"><FontAwesomeIcon  icon={faPlus} /> Add</Nav.Link>
+                <Nav.Link href="/search"><FontAwesomeIcon  icon={faSearch} /> Search</Nav.Link>
+                <Nav.Link href="/detail"><FontAwesomeIcon  icon={faInfoCircle} /> Detail</Nav.Link>
+                <Nav.Link href="/update"><FontAwesomeIcon  icon={faPencilAlt} /> Update</Nav.Link>
 
               </Nav>
             </Navbar.Collapse>

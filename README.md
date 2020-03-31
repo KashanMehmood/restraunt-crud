@@ -11,3 +11,6 @@ https://www.youtube.com/playlist?list=PL8p2I9GklV46FX2Uik_rVlbN_nSx0Wc43
         1.  npm install react-bootstrap bootstrap
         2.  add line in index.js
                 import 'bootstrap/dist/css/bootstrap.min.css
+
+3.  Add Font Awsome Icon
+        1.      npm i --save @fortawesome/fontawesome-svg-core  @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
