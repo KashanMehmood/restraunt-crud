@@ -6,10 +6,11 @@ class RestaurantMake extends Component {
         super();
         this.state = {
 
-            name: null,
-            address: null,
-            rating: null,
-            email: null
+            id: "",
+            name: "",
+            address: "",
+            rating: "",
+            email: ""
         };
 
         this.submit = this.submit.bind(this);

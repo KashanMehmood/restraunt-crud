@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
-
+import { Link } from "react-router-dom";
+  
 class RestaurantList extends Component {
 
     constructor() {
@@ -11,10 +12,10 @@ class RestaurantList extends Component {
     }
 
     componentDidMount() {
-        setInterval(()=> this.getMovies(), 1000)
-    }
+        // setInterval(()=> this.restaurant(), 0)
+    // }
     
-    async getMovies(){
+    // async restaurant(){
         fetch("http://localhost:3000/restaurant")
         .then(response => response.json())
         .then((responseJson) => {
@@ -40,16 +41,18 @@ class RestaurantList extends Component {
                                 <th>Email</th>
                                 <th>Address</th>
                                 <th>Rating</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {this.state.list.map((item, index) =>
-                                <tr>
+                                <tr key={index}>
                                     <td key={item.id}>{item.id}</td>
                                     <td>{item.name}</td>
                                     <td>{item.email}</td>
                                     <td>{item.address}</td>
                                     <td>{item.rating}</td>
+                                    <td><Link to={"/update/"+item.id} >Edit</Link></td>
 
 
                                 </tr>

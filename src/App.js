@@ -13,7 +13,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -28,12 +27,12 @@ function App() {
               <Nav className="mr-auto">
                 {/* you can also write this  */}
                 {/* <Nav.Link href="/">Home</Nav.Link> */}
-                <Nav.Link href="/"><Link to="/" >Home</Link></Nav.Link>
-                <Nav.Link href="/list"><Link to="/list" >List</Link></Nav.Link>
-                <Nav.Link href="/create"><Link to="/create" >Add</Link></Nav.Link>
-                <Nav.Link href="/search"><Link to="/search" >Search</Link></Nav.Link>
-                <Nav.Link href="/detail"><Link to="/detail" >Detail</Link></Nav.Link>
-                <Nav.Link href="/update"><Link to="/update" >Update</Link></Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/list">List</Nav.Link>
+                <Nav.Link href="/create">Add</Nav.Link>
+                <Nav.Link href="/search">Search</Nav.Link>
+                <Nav.Link href="/detail">Detail</Nav.Link>
+                <Nav.Link href="/update">Update</Nav.Link>
 
               </Nav>
             </Navbar.Collapse>
@@ -77,8 +76,9 @@ function App() {
             <Route path="/detail">
               <RestaurantDetail />
             </Route>
-            <Route path="/update">
-              <RestaurantUpdate />
+            <Route path="/update/:id"
+              render={(props) => <RestaurantUpdate {...props} />}
+            >
             </Route>
           </Switch>
         </div>
