@@ -1,0 +1,18 @@
+{
+    "restaurant": [
+        {
+            "id": 1,
+            "name": "json-resto",
+            "address": "kashan",
+            "rating": "4.5",
+            "email": "abc@gmail.com"
+        },
+        {
+            "id": 1,
+            "name": "java-resto",
+            "address": "kashi",
+            "rating": "4.4",
+            "email": "xyz@gmail.com"
+        }
+    ]
+}
