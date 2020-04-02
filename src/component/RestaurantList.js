@@ -13,21 +13,34 @@ class RestaurantList extends Component {
         };
     }
 
-    componentDidMount() {
-        // setInterval(()=> this.restaurant(), 0)
-    // }
-    
-    // async restaurant(){
-        fetch("http://localhost:3000/restaurant")
-        .then(response => response.json())
-        .then((responseJson) => {
-            this.setState({
+    delete(itemId) {
 
-                list: responseJson,
-            })
-            console.log(this.state.list)
+        fetch("http://localhost:3000/restaurant/" + itemId, {
+            method: "DELETE",
         })
-        .catch(error => console.log(error)) //to catch the errors if any
+            .then(response => response.json())
+            .then((responseJson) => {
+                alert("Restaurant Deleted");
+                this.getData();
+            })
+            .catch(error => console.log(error)) //to catch the errors if any
+    }
+
+    componentDidMount() {
+        this.getData();
+    }
+
+    getData = () => {
+        fetch("http://localhost:3000/restaurant")
+            .then(response => response.json())
+            .then((responseJson) => {
+                this.setState({
+
+                    list: responseJson,
+                })
+                // console.log(this.state.list)
+            })
+            .catch(error => console.log(error)) //to catch the errors if any
     }
 
     render() {
@@ -56,7 +69,7 @@ class RestaurantList extends Component {
                                     <td>{item.rating}</td>
                                     <td>
                                         <Link to={"/update/"+item.id}><FontAwesomeIcon  icon={faEdit} /> </Link>
-                                        <Link to={"/update/"+item.id}><FontAwesomeIcon  icon={faTrash} /> </Link>
+                                        <Link onClick={ () => this.delete(item.id) }><FontAwesomeIcon  icon={faTrash} /> </Link>
                                     </td>
 
 
@@ -64,8 +77,6 @@ class RestaurantList extends Component {
                             )}
                         </tbody>
                     </Table>
-
-
                 </div> : 'Loading...'}
             </div>
         );
