@@ -9,7 +9,7 @@ class RestaurantList extends Component {
     constructor() {
         super();
         this.state = {
-            list: null
+            list: ""
         };
     }
 
@@ -69,7 +69,7 @@ class RestaurantList extends Component {
                                     <td>{item.rating}</td>
                                     <td>
                                         <Link to={"/update/"+item.id}><FontAwesomeIcon  icon={faEdit} /> </Link>
-                                        <Link onClick={ () => this.delete(item.id) }><FontAwesomeIcon  icon={faTrash} /> </Link>
+                                        <Link onClick={ () => this.delete(item.id) }><FontAwesomeIcon  icon={faTrash} color="red" /> </Link>
                                     </td>
 
 
