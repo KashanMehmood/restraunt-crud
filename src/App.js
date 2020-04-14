@@ -6,6 +6,7 @@ import RestaurantMake from "./component/RestaurantMake";
 import RestaurantSearch from "./component/RestaurantSearch";
 import RestaurantDetail from "./component/RestaurantDetail";
 import RestaurantUpdate from "./component/RestaurantUpdate";
+import Login from "./component/Login";
 import { Navbar, Nav } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
@@ -13,7 +14,7 @@ import {
   Route,
 } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList,faHome, faPlus, faSearch, faInfoCircle, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { faList,faHome, faPlus, faSearch, faInfoCircle, faPencilAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
                 <Nav.Link href="/search"><FontAwesomeIcon  icon={faSearch} /> Search</Nav.Link>
                 <Nav.Link href="/detail"><FontAwesomeIcon  icon={faInfoCircle} /> Detail</Nav.Link>
                 <Nav.Link href="/update"><FontAwesomeIcon  icon={faPencilAlt} /> Update</Nav.Link>
+                <Nav.Link href="/login"><FontAwesomeIcon  icon={faSignInAlt} /> Login</Nav.Link>
 
               </Nav>
             </Navbar.Collapse>
@@ -79,6 +81,10 @@ function App() {
             <Route path="/update/:id"
               render={(props) => <RestaurantUpdate {...props} />}
             >
+            </Route>
+            <Route path="/login" // render={(props) => <RestaurantUpdate {...props} />}
+            >
+                <Login />
             </Route>
           </Switch>
         </div>

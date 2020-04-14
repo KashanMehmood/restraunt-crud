@@ -1,4 +1,14 @@
 {
+  "login": [
+    {
+      "email": "dani@gmail.com",
+      "password": "dani"
+    },
+    {
+      "email": "kashi@gmail.com",
+      "password": "kashi"
+    }
+  ],
   "restaurant": [
     {
       "id": 1,
