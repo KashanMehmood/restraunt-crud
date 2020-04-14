@@ -69,7 +69,7 @@ class RestaurantList extends Component {
                                     <td>{item.rating}</td>
                                     <td>
                                         <Link to={"/update/"+item.id}><FontAwesomeIcon  icon={faEdit} /> </Link>
-                                        <Link to="" onClick={ () => this.delete(item.id) }><FontAwesomeIcon  icon={faTrash} color="red" /> </Link>
+                                        <Link to="/list" onClick={ () => this.delete(item.id) }><FontAwesomeIcon  icon={faTrash} color="red" /> </Link>
                                     </td>
 
 

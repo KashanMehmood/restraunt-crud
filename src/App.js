@@ -14,7 +14,8 @@ import {
   Route,
 } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList,faHome, faPlus, faSearch, faInfoCircle, faPencilAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faList, faHome, faPlus, faSearch, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import Logout from './component/Logout';
 
 function App() {
   return (
@@ -28,14 +29,19 @@ function App() {
               <Nav className="mr-auto">
                 {/* you can also write this  */}
                 {/* <Nav.Link href="/">Home</Nav.Link> */}
-                <Nav.Link href="/"><FontAwesomeIcon  icon={faHome} /> Home</Nav.Link>
+                <Nav.Link href="/"><FontAwesomeIcon icon={faHome} /> Home</Nav.Link>
                 <Nav.Link href="/list"><FontAwesomeIcon icon={faList} /> List</Nav.Link>
-                <Nav.Link href="/create"><FontAwesomeIcon  icon={faPlus} /> Add</Nav.Link>
-                <Nav.Link href="/search"><FontAwesomeIcon  icon={faSearch} /> Search</Nav.Link>
-                <Nav.Link href="/detail"><FontAwesomeIcon  icon={faInfoCircle} /> Detail</Nav.Link>
-                <Nav.Link href="/update"><FontAwesomeIcon  icon={faPencilAlt} /> Update</Nav.Link>
-                <Nav.Link href="/login"><FontAwesomeIcon  icon={faSignInAlt} /> Login</Nav.Link>
+                <Nav.Link href="/create"><FontAwesomeIcon icon={faPlus} /> Add</Nav.Link>
+                <Nav.Link href="/search"><FontAwesomeIcon icon={faSearch} /> Search</Nav.Link>
+                {/* <Nav.Link href="/detail"><FontAwesomeIcon  icon={faInfoCircle} /> Detail</Nav.Link> */}
+                {/* <Nav.Link href="/update"><FontAwesomeIcon  icon={faPencilAlt} /> Update</Nav.Link> */}
 
+                {
+                  localStorage.getItem('login') ?
+                    <Nav.Link href="/logout"><FontAwesomeIcon icon={faSignInAlt} /> Logout</Nav.Link>
+                    :
+                    <Nav.Link href="/login"><FontAwesomeIcon icon={faSignInAlt} /> Login</Nav.Link>
+                }
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -82,9 +88,11 @@ function App() {
               render={(props) => <RestaurantUpdate {...props} />}
             >
             </Route>
-            <Route path="/login" // render={(props) => <RestaurantUpdate {...props} />}
-            >
-                <Login />
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/logout">
+              <Logout />
             </Route>
           </Switch>
         </div>

@@ -21,6 +21,7 @@ class Login extends Component {
             .then((responseJson) => {
 
                 if (responseJson.length === 1) {
+                    localStorage.setItem('login', JSON.stringify(responseJson));
                     this.props.history.push('/list');
                 } else {
                     alert("Your email or passwor is incorrect");
