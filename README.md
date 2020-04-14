@@ -14,3 +14,6 @@ https://www.youtube.com/playlist?list=PL8p2I9GklV46FX2Uik_rVlbN_nSx0Wc43
 
 3.  Add Font Awsome Icon
         1.      npm i --save @fortawesome/fontawesome-svg-core  @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+
+4.      Protected Route   
+        https://codedaily.io/tutorials/49/Create-a-ProtectedRoute-for-Logged-In-Users-with-Route-Redirect-and-a-Render-Prop-in-React-Router      

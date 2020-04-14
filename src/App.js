@@ -16,6 +16,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faHome, faPlus, faSearch, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import Logout from './component/Logout';
+import Protected from './component/Protected';
 
 function App() {
   return (
@@ -69,9 +70,12 @@ function App() {
           </nav> */}
 
           <Switch>
-            <Route exact path="/">
+            {/* <Route exact path="/">
               <Home />
-            </Route>
+            </Route> */}
+
+            <Protected exact path="/" component={Home} />
+            
             <Route path="/list">
               <RestaurantList />
             </Route>
